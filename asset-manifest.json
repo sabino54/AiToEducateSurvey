@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/AiToEducateSurveyPublic/static/css/main.fe9abeaf.css",
+    "main.js": "/AiToEducateSurveyPublic/static/js/main.2c95c2ec.js",
+    "static/js/787.b07a3d37.chunk.js": "/AiToEducateSurveyPublic/static/js/787.b07a3d37.chunk.js",
+    "static/media/tool_screenshot.png": "/AiToEducateSurveyPublic/static/media/tool_screenshot.9692c3de790dde286241.png",
+    "index.html": "/AiToEducateSurveyPublic/index.html",
+    "main.fe9abeaf.css.map": "/AiToEducateSurveyPublic/static/css/main.fe9abeaf.css.map",
+    "main.2c95c2ec.js.map": "/AiToEducateSurveyPublic/static/js/main.2c95c2ec.js.map",
+    "787.b07a3d37.chunk.js.map": "/AiToEducateSurveyPublic/static/js/787.b07a3d37.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe9abeaf.css",
+    "static/js/main.2c95c2ec.js"
+  ]
+}
