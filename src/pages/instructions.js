@@ -17,7 +17,7 @@ const Instructions = ({navigateTo}) => {
   
       <p>This tool will point out quotes it believes to be biased or misleading and will explain why. If you are assisted by the tool, you will be asked at the end how useful you found it and if the quotes it highlighted were accurately rated. You will not be able to return to the article after moving on.</p>
   
-      <p>In total, you will read 4 articles and answer 36 questions. It is important to read each story carefully and respond to the questions to the best of your ability.</p>
+      <p>In total, you will read 4 articles and answer 28 questions. It is important to read each story carefully and respond to the questions to the best of your ability.</p>
     
       <div style={styles.buttonContainer}>
         <button style={styles.button} onClick={() => navigateTo('preSurvey')}>Previous</button>    
@@ -36,8 +36,8 @@ const styles = {
       lineHeight: 1.4,
   },
   articleContainer: {
-      marginRight: 200,
-      marginLeft: 200,
+      marginRight: "20%",
+      marginLeft: "20%",
       paddingBottom: 10,
       display: 'flex', // Added for flex layout
       flexDirection: 'column', // Stack items vertically

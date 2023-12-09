@@ -3,7 +3,6 @@ import Highlighter from "react-highlight-words";
 import 'react-tippy/dist/tippy.css';
 import { questions } from "../Data/articlequestions";
 import RenderHighlight from "../Data/renderhighlight";
-import articleJSON from "../Data/unique_quotes_a4.json"
 
 const createQuoteReasoningMap = (annotations) => {
   const map = {};
@@ -17,18 +16,14 @@ const createQuoteReasoningMap = (annotations) => {
   });
   return map;
 };
-
-
   
 
-const Article_four = ({ answers, setAnswers, navigateTo }) => {
+const Article_four = ({ answers, setAnswers, navigateTo, articleJSON }) => {
 
   const quoteReasoningMap = createQuoteReasoningMap(articleJSON.annotations);
 
   const getTooltipText = (quote) => {
     const annotation = quoteReasoningMap[quote];
-    console.log(quote)
-    console.log(annotation)
 
     if (!annotation) {
       return { title: "No techniques provided", content: "No reasoning provided" };
@@ -44,7 +39,8 @@ const Article_four = ({ answers, setAnswers, navigateTo }) => {
   const handleOptionChange = (questionId, answer) => {
     setAnswers(prevAnswers => ({
       ...prevAnswers,
-      [questionId]: answer
+      [questionId]: answer,
+      text: articleJSON.headline
     }));
   };
 
@@ -84,8 +80,10 @@ const Article_four = ({ answers, setAnswers, navigateTo }) => {
   return (
     <div style={styles.articleContainer}>
         <div style={{ marginBottom: '60px' }}>
-        <img src={articleJSON.logo} style={{marginTop: 37, marginLeft: "20%", width: "50%", height: "auto"}}/> 
-        <p style={{...styles.articleTitle, marginLeft:"25%"}}> Source: {articleJSON.source}</p>
+        <div style={styles.logoContainer}>
+            <img src={articleJSON.logo} alt="Logo" style={styles.logo} />
+        </div>
+        <p style={styles.sourceTextContainer}>Source: {articleJSON.source}</p>
         <p style={styles.articleTitle}>{articleJSON.headline}</p>
         <Highlighter
           highlightClassName="YourHighlightClass"
@@ -164,7 +162,22 @@ const styles = {
         boxShadow: 'none', // Removes any shadow effect
         backgroundImage: 'none', // Removes any gradient background
         marginTop: 18,
-    }
+    },
+    logoContainer: {
+      textAlign: 'center', // Centers the content
+      padding: '10px', // Adds some space around the logo
+  },
+  logo: {
+      maxWidth: '100%', // Ensures the logo is not wider than its container
+      maxHeight: '150px', // Sets a maximum height for the logo
+      height: 'auto', // Keeps the aspect ratio of the logo
+  },
+  sourceTextContainer: {
+    textAlign: 'center', // Centers the content
+    padding: '10px', // Adds some space around the text
+    fontSize: 26, // Sets the font size
+    fontWeight: 'bold',
+},
 };
 
 export default Article_four;

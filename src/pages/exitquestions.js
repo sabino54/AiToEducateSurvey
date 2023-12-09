@@ -17,6 +17,7 @@ const ExitQuestions = ({ answers, setAnswers, navigateTo, presurveyanswers, arti
           articleTwo: articletwoanswers,
           articleThree: articlethreeanswers,
           articleFour: articlefouranswers,
+          used_tool: true,
         });
         console.log(error)
       }
@@ -43,28 +44,28 @@ const ExitQuestions = ({ answers, setAnswers, navigateTo, presurveyanswers, arti
       <div key={question.id} style={{margin: 10}}>
           <div style={{ margin: 12 }}>{question.questionText}</div>
           <form>
-              {question.answerOptions.map((option, index) => (
+              {question.options.map((option, index) => (
                   <div key={index}>
                       <input
                           type="radio"
-                          id={`${question.id}-${option}`}
+                          id={`${question.id}-${index}`}
                           name={`question-${question.id}`}
                           value={option}
                           onChange={(e) => handleOptionChange(question.id, e.target.value)}
                           checked={answers[question.id] === option}
                           style={{ marginTop: 10, margin: 10 }}
                       />
-                      <label htmlFor={`${question.id}-${option}`}>{option}</label>
+                      <label htmlFor={`${question.id}-${index}`}>{option}</label>
                   </div>
               ))}
           </form>
       </div>
-  );
+    );    
 
   return (
     <div style={styles.articleContainer}>
       <h1>Exit Questionnaire</h1>
-      <p>Please answer the following questions either True or false:</p>
+      <p>Please answer the following questions</p>
       {questions.map(renderQuestion)}
       <div style={styles.buttonContainer}>
             <button 

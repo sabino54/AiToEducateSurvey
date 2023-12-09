@@ -42,5 +42,17 @@ export const questions = [
         'Strongly Agree: I wholeheartedly believe that the tool was extremely helpful in identifying if articles contained biased or misleading content.'
       ],
       id: 4,
+    },
+    {
+      questionText: '5. How much do you trust this source?',
+      answerOptions: [
+        'Not at all trustworthy: I have strong reasons to distrust this source',
+        'Slightly trustworthy: I have some reservations about trusting this source',
+        'Moderately trustworthy: I am somewhat uncertain but lean towards trusting this source',
+        'Mostly trustworthy: I generally trust this source but have minor concerns',
+        'Completely trustworthy: I fully trust this source without any reservations'
+      ],
+      id: 5,
     }
+
 ];
